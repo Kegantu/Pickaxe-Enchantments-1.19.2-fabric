@@ -1,0 +1,12 @@
+{
+  "enchantment.pickaxes.breakarea": "3x3",
+  "enchantment.pickaxes.breakarea5x5": "5x5",
+  "text.config.pickaxesEnchantments.option.enableOutline": "Увімкнути Обведення Блоків",
+  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Чи буде видно обведення 3x3 або 5x5, коли гравець тримає кайло з відповідними чарами",
+  "text.config.pickaxesEnchantments.title": "Pickaxe Enchantments Mod",
+  "text.config.pickaxesEnchantments.category.color": "Кольорові Канали",
+  "text.config.pickaxesEnchantments.option.color.red": "Червоний",
+  "text.config.pickaxesEnchantments.option.color.green": "Зелений",
+  "text.config.pickaxesEnchantments.option.color.blue": "Синій",
+  "text.config.pickaxesEnchantments.option.color.alpha": "Альфа"
+}

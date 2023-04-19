@@ -1,0 +1,13 @@
+{
+  "enchantment.pickaxes.breakarea": "3x3",
+  "enchantment.pickaxes.breakarea5x5": "5x5",
+  "text.config.pickaxesEnchantments.option.enableOutline": "Enable Block Outline",
+  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Enabling or disabling custom shape outline",
+  "text.config.pickaxesEnchantments.title": "Pickaxe Enchantments Mod",
+  "text.config.pickaxesEnchantments.category.color": "Color Channels",
+  "text.config.pickaxesEnchantments.option.color.red": "Red",
+  "text.config.pickaxesEnchantments.option.color.green": "Green",
+  "text.config.pickaxesEnchantments.option.color.blue": "Blue",
+  "text.config.pickaxesEnchantments.option.color.alpha": "Alpha"
+
+}
