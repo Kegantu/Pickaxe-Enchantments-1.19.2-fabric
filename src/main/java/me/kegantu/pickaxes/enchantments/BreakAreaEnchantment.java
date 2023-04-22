@@ -1,15 +1,17 @@
 package me.kegantu.pickaxes.enchantments;
 
+import me.kegantu.pickaxes.Interface.IBreakBlockEnchantment;
 import me.kegantu.pickaxes.Pickaxes;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class BreakAreaEnchantment extends Enchantment {
+public class BreakAreaEnchantment extends Enchantment implements IBreakBlockEnchantment {
 
-    private static final int radius = 1;
     public static final Enchantment BREAK_AREA = registerEnchantment(new BreakAreaEnchantment());
 
     public BreakAreaEnchantment() {
@@ -32,8 +34,13 @@ public class BreakAreaEnchantment extends Enchantment {
     }
 
     @Override
+    public boolean isAcceptableItem(ItemStack stack) {
+        return stack.getItem() instanceof PickaxeItem;
+    }
+
+    @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != BreakArea5x5Enchantment.BREAK_AREA5x5;
+        return super.canAccept(other) && other != BreakArea5x5Enchantment.BREAK_AREA5x5 && other != BreakArea21x21Enchantment.BREAK_AREA21x21;
     }
 
     private static Enchantment registerEnchantment(BreakAreaEnchantment item){
@@ -44,7 +51,8 @@ public class BreakAreaEnchantment extends Enchantment {
         Pickaxes.LOGGER.debug("yay");
     }
 
-    public static int getRadius() {
-        return radius;
+    @Override
+    public int getRadius() {
+        return 1;
     }
 }

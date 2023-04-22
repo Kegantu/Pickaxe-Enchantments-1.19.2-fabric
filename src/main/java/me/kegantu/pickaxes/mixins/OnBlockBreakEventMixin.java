@@ -19,8 +19,10 @@ public class OnBlockBreakEventMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/block/Block;dropStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)V"), method = "afterBreak", cancellable = true)
     private void OnBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, BlockEntity blockEntity, ItemStack stack, CallbackInfo ci){
-        if(EventHandler.isReadyToBreak){
-            OnBlockBreakEventCallBack.EVENT.invoker().blockBreak(player, state, world, pos, blockEntity);
+        if (!world.isClient()){
+            if(EventHandler.isReadyToBreak){
+                OnBlockBreakEventCallBack.EVENT.invoker().blockBreak(player, state, world, pos, blockEntity);
+            }
         }
     }
 }

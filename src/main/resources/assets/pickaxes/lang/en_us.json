@@ -1,12 +1,17 @@
 {
   "enchantment.pickaxes.breakarea": "3x3",
+  "enchantment.pickaxes.breakarea.desc": "Allows the player to mine 3x3",
+  "enchantment.pickaxes.breakarea21x21": "21x21",
   "enchantment.pickaxes.breakarea5x5": "5x5",
-  "text.config.pickaxesEnchantments.option.enableOutline": "Enable Block Outline",
+  "enchantment.pickaxes.breakarea5x5.desc":"Allows the player to mine 5x5",
+  "text.config.pickaxesEnchantments.option.enableOutline": "Block Outline",
   "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Enabling or disabling custom shape outline",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation" : "Breaking Block Animation",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation.tooltip" : "Enabling or disabling 3x3 and 5x5 breaking block animation",
   "text.config.pickaxesEnchantments.title": "Pickaxe Enchantments Mod",
-  "text.config.pickaxesEnchantments.category.color": "Color Channels",
+  "text.config.pickaxesEnchantments.category.color": "Outline Color",
   "text.config.pickaxesEnchantments.option.color.red": "Red",
   "text.config.pickaxesEnchantments.option.color.green": "Green",
   "text.config.pickaxesEnchantments.option.color.blue": "Blue",
-  "text.config.pickaxesEnchantments.option.color.alpha": "Alpha"
+  "text.config.pickaxesEnchantments.option.color.alpha": "Opacity"
 }

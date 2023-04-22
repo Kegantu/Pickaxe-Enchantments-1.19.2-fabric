@@ -4,12 +4,11 @@ package me.kegantu.pickaxes;
 import me.kegantu.pickaxes.config.pickaxesEnchantmentsConfig;
 import me.kegantu.pickaxes.enchantments.BreakArea5x5Enchantment;
 import me.kegantu.pickaxes.enchantments.BreakAreaEnchantment;
+import me.kegantu.pickaxes.enchantments.BreakArea21x21Enchantment;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.awt.*;
 
 
 public class Pickaxes implements ModInitializer {
@@ -24,5 +23,6 @@ public class Pickaxes implements ModInitializer {
 
 		BreakAreaEnchantment.loadEnchantment();
 		BreakArea5x5Enchantment.loadEnchantment();
+		BreakArea21x21Enchantment.loadEnchantment();
 	}
 }

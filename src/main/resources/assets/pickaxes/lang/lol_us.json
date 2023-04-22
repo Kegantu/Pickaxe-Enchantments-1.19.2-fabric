@@ -1,13 +1,18 @@
 {
-  "enchantment.pickaxes.breakarea": "3x3",
-  "enchantment.pickaxes.breakarea5x5": "5x5",
-  "text.config.pickaxesEnchantments.option.enableOutline": "Enable Block Outline",
-  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Enabling or disabling custom shape outline",
-  "text.config.pickaxesEnchantments.title": "Pickaxe Enchantments Mod",
-  "text.config.pickaxesEnchantments.category.color": "Color Channels",
-  "text.config.pickaxesEnchantments.option.color.red": "Red",
-  "text.config.pickaxesEnchantments.option.color.green": "Green",
-  "text.config.pickaxesEnchantments.option.color.blue": "Blue",
-  "text.config.pickaxesEnchantments.option.color.alpha": "Alpha"
+  "enchantment.pickaxes.breakarea": "3x3 cats",
+  "enchantment.pickaxes.breakarea21x21": "21x21 cats",
+  "enchantment.pickaxes.breakarea5x5": "5x5 cats",
+  "text.config.pickaxesEnchantments.option.enableOutline": "Enable Blok lines",
+  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Enablin or disablng something fur nerdz",
+  "text.config.pickaxesEnchantments.title": "Pikax Magic Stuf",
+  "text.config.pickaxesEnchantments.category.color": "Soo much colr",
+  "text.config.pickaxesEnchantments.option.color.red": "Redish",
+  "text.config.pickaxesEnchantments.option.color.green": "Greenish",
+  "text.config.pickaxesEnchantments.option.color.blue": "Bloo",
+  "text.config.pickaxesEnchantments.option.color.alpha": "U cant see",
+  "enchantment.pickaxes.breakarea.desc": "Allows the player to mine 3x3",
+  "enchantment.pickaxes.breakarea5x5.desc": "Allows the player to mine 5x5",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation": "Breaking Block Animation",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation.tooltip": "Enabling or disabling 3x3 and 5x5 breaking block animation"
 
 }

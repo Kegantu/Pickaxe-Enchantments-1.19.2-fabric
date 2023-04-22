@@ -2,14 +2,15 @@
 	"schemaVersion": 1,
 	"id": "pickaxes",
 	"version": "${version}",
-	"name": "Pickaxes",
-	"description": "idk what is this thing lol",
+	"name": "Pickaxe Enchantments",
+	"description": "This mod adds enchantments that allow the player to mine 3x3 and 5x5 area",
 	"authors": [
-		"Kegantu"
+		"Kegantu",
+		"\nTranslators : \nKegantu, APOLL083"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Kegantu/Pickaxe-Enchantments-1.19.2-fabric",
+		"issues": "https://github.com/Kegantu/Pickaxe-Enchantments-1.19.2-fabric/issues"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/pickaxes/icon.png",

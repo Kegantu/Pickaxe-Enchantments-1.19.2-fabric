@@ -1,12 +1,17 @@
 {
   "enchantment.pickaxes.breakarea": "3x3",
+  "enchantment.pickaxes.breakarea21x21": "21x21",
   "enchantment.pickaxes.breakarea5x5": "5x5",
-  "text.config.pickaxesEnchantments.option.enableOutline": "Увімкнути Обведення Блоків",
-  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Чи буде видно обведення 3x3 або 5x5, коли гравець тримає кайло з відповідними чарами",
+  "text.config.pickaxesEnchantments.option.enableOutline": "Обведення Блоків",
+  "text.config.pickaxesEnchantments.option.enableOutline.tooltip": "Чи буде видно обведення 3x3 або 5x5 в залежності з яким зачарованням гравець грає",
   "text.config.pickaxesEnchantments.title": "Pickaxe Enchantments Mod",
-  "text.config.pickaxesEnchantments.category.color": "Кольорові Канали",
+  "text.config.pickaxesEnchantments.category.color": "Колір Обведення Блоків",
   "text.config.pickaxesEnchantments.option.color.red": "Червоний",
   "text.config.pickaxesEnchantments.option.color.green": "Зелений",
   "text.config.pickaxesEnchantments.option.color.blue": "Синій",
-  "text.config.pickaxesEnchantments.option.color.alpha": "Альфа"
+  "text.config.pickaxesEnchantments.option.color.alpha": "Прозорість",
+  "enchantment.pickaxes.breakarea.desc": "Гравець з цим чарем може копати 3x3",
+  "enchantment.pickaxes.breakarea5x5.desc": "Гравець з цим чарем може копати 5x5",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation": "Анімація Копання Блоків",
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation.tooltip": "Чи буде видно анімацію копання блоків 3x3 або 5x5 в залежності з яким зачарованням гравець грає"
 }

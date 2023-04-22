@@ -24,7 +24,7 @@ public class BreakAreaEnchantmentBehavior {
                     if (i == 0 && j == 0 && !outLine){
                         continue;
                     }
-                    positions.add(new BlockPos(blockBrokeByPickaxes.getX(), blockBrokeByPickaxes.getY() + j, blockBrokeByPickaxes.getZ() + i));
+                    positions.add(new BlockPos(blockHit.getBlockPos().getX(), blockHit.getBlockPos().getY() + j, blockHit.getBlockPos().getZ() + i));
                 }
             }
         }
