@@ -12,7 +12,7 @@ import net.minecraft.util.registry.Registry;
 
 public class BreakArea21x21Enchantment extends Enchantment implements IBreakBlockEnchantment {
 
-    public static final Enchantment BREAK_AREA21x21 = registerEnchantment(new BreakArea21x21Enchantment());
+    //public static final Enchantment BREAK_AREA21x21 = registerEnchantment(new BreakArea21x21Enchantment());
 
     public BreakArea21x21Enchantment() {
         super(Rarity.VERY_RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[] {EquipmentSlot.MAINHAND});

@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMaps;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import me.kegantu.pickaxes.BreakingBlockObject.AppendedObjectIterator;
+import me.kegantu.pickaxes.EventHandler;
 import me.kegantu.pickaxes.Interface.IBreakBlockEnchantment;
 import me.kegantu.pickaxes.Pickaxes;
 import me.kegantu.pickaxes.behavior.BreakAreaEnchantmentBehavior;
@@ -62,13 +63,6 @@ public class WorldRendererMixin {
         ItemStack heldStack = this.client.player.getInventory().getMainHandStack();
 
         HashSet<BlockPos> positions = new HashSet<>();
-        /*if (EnchantmentHelper.getLevel(BreakAreaEnchantment.BREAK_AREA, heldStack) > 0){
-            positions = BreakAreaEnchantmentBehavior.blockPositions(blockPos, BreakAreaEnchantment.getRadius(), true);
-        } else if (EnchantmentHelper.getLevel(BreakArea5x5Enchantment.BREAK_AREA5x5, heldStack) > 0) {
-            positions = BreakAreaEnchantmentBehavior.blockPositions(blockPos, BreakArea5x5Enchantment.getRadius(), true);
-        } else if (EnchantmentHelper.getLevel(OhFuckEnchantment.BREAK_AREA21x21, heldStack) > 0) {
-            positions = BreakAreaEnchantmentBehavior.blockPositions(blockPos, OhFuckEnchantment.getRadius(), true);
-        }*/
 
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(heldStack);
 
@@ -76,7 +70,7 @@ public class WorldRendererMixin {
             if (enchantment instanceof IBreakBlockEnchantment breakBlockEnchantment){
                 radius = breakBlockEnchantment.getRadius();
 
-                positions = BreakAreaEnchantmentBehavior.blockPositions(blockPos, radius, true);
+                positions = BreakAreaEnchantmentBehavior.blockPositions(blockPos, client.player, radius, true);
 
                 List<VoxelShape> outlineShapes = new ArrayList<>();
                 outlineShapes.add(VoxelShapes.empty());
@@ -91,11 +85,19 @@ public class WorldRendererMixin {
                     return;
                 }
 
+                if (!EventHandler.isEnabled){
+                    return;
+                }
+
                 if(!client.player.getAbilities().creativeMode){
                     if(!client.player.isSneaking()){
                         if (client.crosshairTarget instanceof BlockHitResult crosshairTarget) {
 
                             BlockPos crosshairPos = crosshairTarget.getBlockPos();
+
+                            if (heldStack.isEmpty()){
+                                return;
+                            }
 
                             if (world.getBlockState(crosshairPos).getMaterial() == Material.STONE){
 
@@ -151,6 +153,10 @@ public class WorldRendererMixin {
     private Long2ObjectMap<BlockBreakingInfo> getCurrentExtraBreakingInfos() {
         assert client.player != null;
 
+        if(!EventHandler.isEnabled){
+            return Long2ObjectMaps.emptyMap();
+        }
+
         ItemStack heldStack = this.client.player.getInventory().getMainHandStack();
         Map<Enchantment, Integer> enchantmentMap = EnchantmentHelper.get(heldStack);
 
@@ -185,7 +191,7 @@ public class WorldRendererMixin {
                             }
 
                             // collect positions for displaying outlines at
-                            HashSet<BlockPos> positions = BreakAreaEnchantmentBehavior.blockPositions(crosshairPos, radius, true);
+                            HashSet<BlockPos> positions = BreakAreaEnchantmentBehavior.blockPositions(crosshairPos, client.player, radius, true);
                             Long2ObjectMap<BlockBreakingInfo> map = new Long2ObjectLinkedOpenHashMap<>(positions.size());
 
                             // filter positions

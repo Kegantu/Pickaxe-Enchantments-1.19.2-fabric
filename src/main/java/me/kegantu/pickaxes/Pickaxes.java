@@ -1,7 +1,7 @@
 package me.kegantu.pickaxes;
 
 
-import me.kegantu.pickaxes.config.pickaxesEnchantmentsConfig;
+import me.kegantu.pickaxes.client.config.pickaxesEnchantmentsConfig;
 import me.kegantu.pickaxes.enchantments.BreakArea5x5Enchantment;
 import me.kegantu.pickaxes.enchantments.BreakAreaEnchantment;
 import me.kegantu.pickaxes.enchantments.BreakArea21x21Enchantment;

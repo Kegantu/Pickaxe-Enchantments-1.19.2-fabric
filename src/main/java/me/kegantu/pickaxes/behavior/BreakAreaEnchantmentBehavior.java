@@ -1,6 +1,7 @@
 package me.kegantu.pickaxes.behavior;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
@@ -10,10 +11,9 @@ import java.util.HashSet;
 
 public class BreakAreaEnchantmentBehavior {
 
-    public static HashSet<BlockPos> blockPositions(BlockPos blockBrokeByPickaxes, int size, boolean outLine){
+    public static HashSet<BlockPos> blockPositions(BlockPos blockBrokeByPickaxes, PlayerEntity player, int size, boolean outLine){
 
-        MinecraftClient client = MinecraftClient.getInstance();
-        HitResult hit = client.crosshairTarget;
+        HitResult hit = player.raycast(4.5f, 1, false);
         BlockHitResult blockHit = (BlockHitResult) hit;
 
         HashSet<BlockPos> positions = new HashSet<>();

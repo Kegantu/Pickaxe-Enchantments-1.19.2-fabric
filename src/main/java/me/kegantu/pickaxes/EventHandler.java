@@ -4,6 +4,7 @@ import me.kegantu.pickaxes.Interface.IBreakBlockEnchantment;
 import me.kegantu.pickaxes.behavior.BreakAreaEnchantmentBehavior;
 import me.kegantu.pickaxes.events.OnBlockBreakEventCallBack;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -14,6 +15,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -22,6 +24,7 @@ import java.util.Map;
 public class EventHandler {
 
     public static boolean isReadyToBreak = true;
+    public static boolean isEnabled = true;
 
     public static void initializeEvent(){
         AttackBlockCallback.EVENT.register(((player, world, hand, pos, direction) -> {
@@ -33,24 +36,28 @@ public class EventHandler {
 
         OnBlockBreakEventCallBack.EVENT.register(((player, blockState, world, pos, blockEntity) -> {
 
-            isReadyToBreak = false;
-
-            int radius = 0;
-
-            Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(player.getMainHandStack());
-
-            for (Enchantment enchantment : enchantments.keySet()) {
-                if (enchantment instanceof IBreakBlockEnchantment breakBlockEnchantment){
-                    radius = breakBlockEnchantment.getRadius();
-                }
+            if (!EventHandler.isEnabled){
+                return ActionResult.PASS;
             }
 
-            if (blockState.getMaterial() == Material.STONE) {
-                for (BlockPos _pos : BreakAreaEnchantmentBehavior.blockPositions(pos, radius, false)) {
-                    TryBreakBlock(_pos, world, world.getBlockState(_pos), player);
+            if (!world.isClient()){
+                isReadyToBreak = false;
+                int radius = 0;
+
+                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(player.getMainHandStack());
+
+                for (Enchantment enchantment : enchantments.keySet()) {
+                    if (enchantment instanceof IBreakBlockEnchantment breakBlockEnchantment){
+                        radius = breakBlockEnchantment.getRadius();
+                    }
+                }
+
+                if (blockState.getMaterial() == Material.STONE) {
+                    for (BlockPos _pos : BreakAreaEnchantmentBehavior.blockPositions(pos, player, radius, false)) {
+                        TryBreakBlock(_pos, world, world.getBlockState(_pos), player);
+                    }
                 }
             }
-
             return ActionResult.PASS;
         }));
     }

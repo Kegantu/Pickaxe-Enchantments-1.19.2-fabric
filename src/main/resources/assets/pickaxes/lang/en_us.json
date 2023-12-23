@@ -13,5 +13,7 @@
   "text.config.pickaxesEnchantments.option.color.red": "Red",
   "text.config.pickaxesEnchantments.option.color.green": "Green",
   "text.config.pickaxesEnchantments.option.color.blue": "Blue",
-  "text.config.pickaxesEnchantments.option.color.alpha": "Opacity"
+  "text.config.pickaxesEnchantments.option.color.alpha": "Opacity",
+  "enchantment.pickaxes.disablemessage": "You Disable %s Enchantment",
+  "enchantment.pickaxes.enablemessage": "You Enable %s Enchantment"
 }

@@ -40,7 +40,7 @@ public class BreakArea5x5Enchantment extends Enchantment implements IBreakBlockE
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != BreakAreaEnchantment.BREAK_AREA && other != BreakArea21x21Enchantment.BREAK_AREA21x21;
+        return super.canAccept(other) && other != BreakAreaEnchantment.BREAK_AREA; //&& other != BreakArea21x21Enchantment.BREAK_AREA21x21;
     }
 
     private static Enchantment registerEnchantment(BreakArea5x5Enchantment item){

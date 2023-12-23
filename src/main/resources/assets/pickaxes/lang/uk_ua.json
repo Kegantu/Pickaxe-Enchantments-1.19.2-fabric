@@ -13,5 +13,7 @@
   "enchantment.pickaxes.breakarea.desc": "Гравець з цим чарем може копати 3x3",
   "enchantment.pickaxes.breakarea5x5.desc": "Гравець з цим чарем може копати 5x5",
   "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation": "Анімація Копання Блоків",
-  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation.tooltip": "Чи буде видно анімацію копання блоків 3x3 або 5x5 в залежності з яким зачарованням гравець грає"
+  "text.config.pickaxesEnchantments.option.enableBreakingBlockAnimation.tooltip": "Чи буде видно анімацію копання блоків 3x3 або 5x5 в залежності з яким зачарованням гравець грає",
+  "enchantment.pickaxes.disablemessage": "You Disable %s Enchantment",
+  "enchantment.pickaxes.enablemessage": "You Enable %s Enchantment"
 }
